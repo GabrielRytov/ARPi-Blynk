@@ -1,9 +1,9 @@
 /**
  * @file       main.cpp
- * @author     Volodymyr Shymanskyy
+ * @author     Gabriel Rytov
  * @license    This project is released under the MIT License (MIT)
- * @copyright  Copyright (c) 2015 Volodymyr Shymanskyy
- * @date       Mar 2015
+ * @copyright  Copyright (c) 2021 Gabriel Rytov
+ * @date       Feb 2021
  * @brief
  */
 
@@ -110,33 +110,38 @@ void routine()
   int fanIntervals = (24 / fan.iterations) * 60; 
   printf("\n Current hour: %i \n", currentHour);
   printf("Current min: %i \n", currentMin);
+  
   if ((totalMin % humIntervals) == 0)
   {
     mist(humidifier.duration);
   }
+  
   if ((totalMin % fanIntervals) == 0)
   {
     ventilate(fan.duration);
   }
+  
   if (humidifier.offHours == currentHour && humidifier.offMinutes == currentMin)
   {
     serialPutchar(Serial, 'C'); // Turns off humidifier
     humidifier.pwrStatus = false;
     Blynk.virtualWrite(V1, 0);
   }
+  
   if (fan.offHours == currentHour && fan.offMinutes == currentMin)
   {
     serialPutchar(Serial, 'E'); // Turns off fan
     fan.pwrStatus = false;
     Blynk.virtualWrite(V2, 0);
-    // The next segment takes automatically takes a picture after the fan turns off - optional 
-    Blynk.virtualWrite(V0, 1);
-    printf("Lights turned on.\n");
-    lights.pwrStatus = true;
-    serialPutchar(Serial, 'B');
-    serialFlush(Serial);
-    system("/home/pi/scripts/capture.sh");
+//     The next segment takes automatically takes a picture after the fan turns off - optional 
+//     Blynk.virtualWrite(V0, 1);
+//     printf("Lights turned on.\n");
+//     lights.pwrStatus = true;
+//     serialPutchar(Serial, 'B');
+//     serialFlush(Serial);
+//     system("/home/pi/scripts/capture.sh");
   }
+  
   if ((currentHour <= 4) || (currentHour >= 17))
   {
     serialPutchar(Serial, 'A'); // Turns off lights

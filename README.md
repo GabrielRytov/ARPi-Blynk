@@ -9,4 +9,6 @@ Simply because both the Raspberry Pi and Arduino hold various advantages and dis
 
 ### How does it work? 
 
-The Raspberry Pi manages all the more complex functions that interpret data, compute basic calculations, and most importantly sync to the blynk cloud. The Arduino Nano however, only knows how to receive commands and send sensor data. 
+The Raspberry Pi manages all the more complex functions that interpret data, compute basic calculations, and most importantly sync with the blynk cloud. The Arduino Nano however, only knows how to receive commands and send sensor data. The intervals are static and have to be implemented before starting the blynk server, however there are options to remotely modify schedules. This option makes more sense for anyone growing a variation of species. 
+
+Modifying the code is very straight forward. All the blynk related code is on the Raspberry Pi under /blynk-library/linux/main.cpp, and the code for the nano is at /src.cpp. To add or remove a device- wire it accordingly to the nano, and interpret it to the built-in language. 

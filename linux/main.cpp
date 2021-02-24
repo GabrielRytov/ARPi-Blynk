@@ -293,7 +293,7 @@ BLYNK_WRITE(V25)
     lights.pwrStatus = true;
     serialPutchar(Serial, 'B');
     serialFlush(Serial);
-    system("/home/pi/scripts/capture.sh"); 
+    system("./capture.sh"); 
   }
 }
 

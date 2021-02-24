@@ -21,6 +21,12 @@ incomingByte = Serial.read();
        }
        else if (incomingByte == 'B')
            digitalWrite(light, HIGH);
+       if (incomingByte == 'C')
+       {
+           digitalWrite(humidifier, LOW);
+       }
+       else if (incomingByte == 'D')
+           digitalWrite(humidifier, HIGH);
 ```
 
 Modifying the code is very straight forward. All the blynk related code is on the Raspberry Pi under `/linux/main.cpp`, and the code for the nano is at `/src.cpp`. To add or remove a device- wire it accordingly to the nano, and interpret it to the built-in language mentioned above.

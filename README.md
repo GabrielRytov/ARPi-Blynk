@@ -5,7 +5,7 @@ An automatic gardener powered with a Raspberry Pi and an Arduino nano. Combined 
 
 ### Why use both an Arduino and a Raspberry Pi? 
 
-Simply because both the Raspberry Pi and Arduino hold various advantages and disadvantages. For example, taking a picture on an ESP12 would take around 80 lines of code, yet on a Raspberry Pi it would only take 1. Reading sensor data however, follows the same logic only backwards, favoring microcontrollers over microcomputers. This approach gave the best of both worlds, and also posed as a new challenge.   
+Simply because both the Raspberry Pi and Arduino are very different. Microcontrollers can interpret non-binary data from sensors, and generally tend to have native PWM. The Raspberry Pi however, is a mini-computer, and is much better at being a webserver than reading sensor data. So why not get the best of both worlds and combine the two?
 
 ### How does it work? 
 

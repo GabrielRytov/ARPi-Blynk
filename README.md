@@ -5,7 +5,7 @@ An automatic gardener powered with a Raspberry Pi and an Arduino nano. Combined 
 
 ### Why use both an Arduino and a Raspberry Pi? 
 
-Simply because the Raspberry Pi and Arduino are very different. Microcontrollers can interpret non-binary data from sensors, and generally tend to have native PWM. The Raspberry Pi however, is a mini-computer, and is much better at being a webserver than reading sensor data. So why not get the best of both worlds and combine the two?
+Simply because the Raspberry Pi and Arduino are very different. Microcontrollers can interpret non-binary data from sensors, and generally tend to have native PWM. The Raspberry Pi however, being a mini-computer, is much better at being a webserver and handling process heavy tasks rather than reading sensor data. So why not get the best of both worlds and combine the two?
 
 ### How does it work? 
 

@@ -21,6 +21,7 @@ incomingByte = Serial.read();
        }
        else if (incomingByte == 'B')
            digitalWrite(light, HIGH);
+           
        if (incomingByte == 'C')
        {
            digitalWrite(humidifier, LOW);

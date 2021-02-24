@@ -9,7 +9,7 @@ Simply because both the Raspberry Pi and Arduino hold various advantages and dis
 
 ### How does it work? 
 
-The Raspberry Pi manages all the more complex functions that interpret data, compute basic calculations, and most importantly sync with the blynk cloud. The Arduino Nano however, only knows how to receive commands and send sensor data. The intervals are static and have to be implemented before starting the blynk server, however there are options to remotely modify variables. This option makes more sense for a more broad growing approach. 
+The Raspberry Pi manages all the more complex functions that interpret data, compute basic calculations, and most importantly sync with the blynk cloud. The Arduino Nano however, only knows how to receive commands and send sensor data. The intervals are static and have to be implemented before starting the blynk server, however there are options to remotely modify variables for those looking to grow a more broad list of species. 
 
 I then had the issue of figuring out how they will communicate between each other, and I went about it by creating a very basic language where letters symbolized commands. This meant sending "A" through serial would execute `digitalWrite(x, HIGH)` on the nano; "B" would do just the opposite, executing `digitalWrite(x, LOW)`. As written in `src.cpp`:
 
